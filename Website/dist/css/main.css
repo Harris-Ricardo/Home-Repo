@@ -1,0 +1,720 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+}
+.home__name {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
+}
+.home__name--last {
+  color: #0000ff;
+  font-weight: 700;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 28px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.menu-btn__burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.menu-btn__burger.open::after {
+  width: 28px;
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.98;
+  visibility: hidden;
+}
+.nav.open {
+  visibility: visible;
+}
+.nav .menu-nav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #272727;
+  list-style-type: none;
+  padding-right: 1rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav.open {
+  transform: translateY(0);
+}
+.nav .menu-nav__item {
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__item.open {
+  transform: translateX(0);
+}
+.nav .menu-nav__item.active > a {
+  color: #0000ff;
+}
+.nav .menu-nav__link {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font-weight: 300;
+  transition: all 0.5s ease-in-out;
+}
+.nav .menu-nav__link:hover {
+  color: #0000ff;
+}
+
+.menu-nav__item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+
+.menu-nav__item:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+.menu-nav__item:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
+.menu-nav__item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+.about {
+  margin-top: 10rem;
+}
+.about__bio-image {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.about__bio-image p {
+  margin-bottom: 2rem;
+}
+.about__bio {
+  width: 80%;
+  text-align: center;
+}
+.about__bio .text-secondary {
+  padding-bottom: 1rem;
+}
+.about .jobs {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.about .jobs__job {
+  background: #414141;
+  padding: 0.5rem;
+  border-bottom: 5px solid #0000ff;
+}
+.about .jobs__job h2, .about .jobs__job h3 {
+  margin: 0.5rem 0;
+}
+.about .jobs__job h6 {
+  margin: 0.3rem 0;
+}
+.about .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.about footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.staff {
+  margin-top: 20rem;
+}
+.staff__bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.staff__bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.staff__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.staff__item {
+  position: relative;
+  border-bottom: 5px solid #0000ff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.staff__item img {
+  width: 100%;
+}
+.staff__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0000ff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.staff__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.staff__item:hover .staff__btn {
+  opacity: 1;
+}
+.staff__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.staff__btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.staff__btn:hover {
+  color: #fff;
+}
+.staff .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.staff footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.academics {
+  margin-top: 20rem;
+}
+.academics__bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.academics__bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.academics__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.academics__item {
+  position: relative;
+  border-bottom: 5px solid #0000ff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.academics__item img {
+  width: 100%;
+}
+.academics__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0000ff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.academics__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.academics__item:hover .academics__btn {
+  opacity: 1;
+}
+.academics__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.academics__btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.academics__btn:hover {
+  color: #fff;
+}
+.academics .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.academics footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.events {
+  margin-top: 20rem;
+}
+.events__bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.events__bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.events__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.events__item {
+  position: relative;
+  border-bottom: 5px solid #0000ff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.events__item img {
+  width: 100%;
+}
+.events__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0000ff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.events__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.events__item:hover .events__btn {
+  opacity: 1;
+}
+.events__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.events__btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.events__btn:hover {
+  color: #fff;
+}
+.events .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.events footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.media {
+  margin-top: 20rem;
+}
+.media__bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.media__bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.media__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.media__item {
+  position: relative;
+  border-bottom: 5px solid #0000ff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.media__item img {
+  width: 100%;
+}
+.media__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0000ff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.media__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.media__item:hover .media__btn {
+  opacity: 1;
+}
+.media__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.media__btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.media__btn:hover {
+  color: #fff;
+}
+.media .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.media footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.sports {
+  margin-top: 20rem;
+}
+.sports__bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.sports__bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.sports__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.sports__item {
+  position: relative;
+  border-bottom: 5px solid #0000ff;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sports__item img {
+  width: 100%;
+}
+.sports__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0000ff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.sports__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.sports__item:hover .sports__btn {
+  opacity: 1;
+}
+.sports__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.sports__btn {
+  opacity: 0;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+}
+.sports__btn:hover {
+  color: #fff;
+}
+.sports .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.sports footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.contact {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/gogle.jpg") center top;
+  background-size: cover;
+}
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.contact__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  font-size: 1.5rem;
+}
+.contact .social-icons {
+  position: initial;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+  }
+  .nav .menu-nav {
+    display: block;
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    text-align: center;
+    margin-left: 30px;
+  }
+  .nav .menu-nav__item {
+    display: inline;
+    padding-right: 1.5rem;
+  }
+  .nav .menu-nav__link {
+    font-size: 1rem;
+    margin-top: 200px;
+  }
+  .about__bio {
+    font-size: 1.5rem;
+  }
+  .staff__bio-image {
+    height: 10vh;
+  }
+  .staff__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .staff .text-secondary {
+    font-size: 3rem;
+  }
+  .contact__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .staff__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .staff__bio-image {
+    height: 50vh;
+  }
+}
+body {
+  background: #272727;
+  color: #fff;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 100;
+  margin-top: 50px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #0000ff;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+.image img{
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.crest{
+  background-image: inherit;
+  text-align: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+main .social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+main .social-icons a {
+  padding: 0.4rem;
+  transition: all 0.5s ease-in-out;
+}
+main .social-icons a:hover {
+  color: #0000ff;
+}
+
+footer {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 1rem;
+  text-align: right;
+  padding: 1rem;
+  color: #fff;
+}
