@@ -30,11 +30,13 @@ nav ul li a {
 }
 
 main {
-  background-image: url(..//img/large.png);
   background-size: contain;
   background-repeat: no-repeat;
   padding: 20px;
- 
+}
+
+main img{
+  width: 20vw;
 }
 
 .container {
