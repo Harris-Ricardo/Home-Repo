@@ -1,4 +1,8 @@
 /* Add your custom styles here */
+*{
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -29,11 +33,13 @@ nav ul li a {
 }
 
 main {
-  padding: 20px;
-  background-image: url(../img/large.png);
-  background-position: center;
+  background-image: url(img/large.png);
   background-repeat: no-repeat;
-  background-size: 250vh 80vw;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 150vh;
+  padding: 20px;
 }
 
 .container {
